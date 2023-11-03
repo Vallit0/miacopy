@@ -17,6 +17,10 @@ import io # For capturing stdout
 from graphviz import Digraph
 import os
 import ctypes
+import sys
+import os
+# Agregar el directorio raíz de tu proyecto al sys.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
 ## Funciones que deberian estar en Functions
@@ -72,6 +76,7 @@ app = Flask(__name__)
 
 @app.route('/analizar', methods=['GET', 'POST'])
 def informacion_estudiante():
+
     if request.method == 'POST':
         # Asumiendo que se hace un POST DE LINEA POR LINEA DESDE EL FRONTEND
         data = request.get_json()
