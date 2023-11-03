@@ -1,0 +1,15 @@
+#REPORTES MBR
+rep -id=540d1 -path=/home/parte1/mbr1.jpg -name=mbr
+rep -id=540d2 -path=/home/parte1/mbr2.jpg -name=mbr
+rep -id=540d3 -path=/home/parte1/mbr3.jpg -name=mbr
+
+#UNMOUNT
+unmount -id=540d3
+
+#Debe dar error porque ya no esta montada la particion
+rep -id=540d3 -path=/home/parte1/mbr3.jpg -name=mbr
+
+#Cerrar el programa para validar
+#Debe dar error porque no deberia estar montado nada
+pause
+rep -id=540d3 -path=/home/parte1/mbr3.jpg -name=mbr

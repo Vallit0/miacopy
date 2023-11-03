@@ -1,0 +1,9 @@
+#MOUNT
+mount -path=/tmp/d1.dsk -name=Part1
+mount -path=/tmp/d2.dsk -name=Part1
+mount -path=/tmp/d3.dsk -name=Part1
+
+########reporte disk del estado inicial de las particiones
+rep -id=XX1d1 -path=/home/parte1/particiones/d1.jpg -name=disk #id XX1d1
+rep -id=XX1d2 -path=/home/parte1/particiones/d2.jpg -name=disk #id XX1d2
+rep -id=XX1d3 -path=/home/parte1/particiones/d3.jpg -name=disk #id XX1d3

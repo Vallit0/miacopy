@@ -1,0 +1,33 @@
+#CREACION DE PARTICIONES PRIMARIAS Y EXTENDIDAS
+
+#Crear particiones d1.dsk
+fdisk -type=P -unit=M -name=Part1 -size=25 -path=/tmp/d1.dsk
+fdisk -type=P -unit=M -name=Part2 -size=25 -path=/tmp/d1.dsk
+fdisk -type=P -unit=M -name=Part3 -size=20 -path=/tmp/d1.dsk
+
+pause
+
+#Crear particiones d2.dsk
+#Error, no existe extendida
+fdisk -type=L -unit=M -name=Part6 -size=25 -path=/tmp/d2.dsk
+#Ocupa los 10MB del disco
+fdisk -type=E -unit=M -name=Part1 -size=10 -path=/tmp/d2.dsk  -fit=FF
+#Error, ya existe una extendida
+fdisk -type=E -unit=M -name=Part7 -size=25 -path=/tmp/d2.dsk  -fit=WF
+fdisk -type=L -unit=k -name=Part2 -size=1024 -path=/tmp/d2.dsk
+fdisk -type=L -unit=k -name=Part3 -size=1024 -path=/tmp/d2.dsk
+fdisk -type=L -unit=k -name=Part4 -size=1024 -path=/tmp/d2.dsk
+
+pause
+
+#Crear particiones d3.dsk
+fdisk -type=E -unit=M -name=Part1 -size=25 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=P -unit=M -name=Part2 -size=25 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=P -unit=M -name=Part3 -size=25 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=P -unit=M -name=Part4 -size=25 -path=/tmp/d3.dsk  -fit=BF
+#error, ya existen 4 particiones
+pause
+
+fdisk -type=P -unit=M -name=Part1 -size=25 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=L -unit=K -name=Part5 -size=1024 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=L -unit=K -name=Part6 -size=1024 -path=/tmp/d3.dsk  -fit=BF

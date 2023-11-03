@@ -1,0 +1,6 @@
+digraph G {
+subgraph cluster{
+ label="MBR"
+tbl[shape=box,label=<
+<table border='0' cellborder='1' cellspacing='0' width='300' height='200'>
+<tr>  <td width='150'> <b>Nombre</b> </td> <td width='150'> <b>Valor</b> </td>  </tr>

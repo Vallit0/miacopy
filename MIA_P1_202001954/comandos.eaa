@@ -1,0 +1,84 @@
+# Archivo Calificacion previa
+# MKDISK (Non-Strict)
+mkdisk -size=500 -unit=K -path=/home/user/Disco1.dsk -fit=bf # BEST FIT -- TESTED AND WORKING
+mkdisk -size=800 -unit=K -path=/home/user/Disco2.dsk -fit=ff # FIRST FIT -- TESTED AND WORKING
+mkdisk -size=300 -unit=K -path=/home/user/Disco3.dsk -fit=wf # WORST FIT
+
+
+# DISCO 1 -> BEST FIT -- TESTED AND WORKING
+# DISCO 2 -> FIRST FIT
+# DISCO 3 -> WORST FIT
+# Fdisk First Fit
+# DISCO 1 -- TESTED AND WORKING
+fdisk -size=10 -unit=K -path=/home/user/Disco1.dsk -name=Particion0
+fdisk -size=10 -unit=K -path=/home/user/Disco1.dsk -name=Particion1
+fdisk -size=30 -unit=K -path=/home/user/Disco1.dsk -name=Particion2
+fdisk -size=50 -unit=K -path=/home/user/Disco1.dsk -name=Particion3
+fdisk -size=20 -unit=K -path=/home/user/Disco1.dsk -name=Particion4
+
+# DISCO 2 -- TESTED AND WORKING
+fdisk -size=10 -unit=K -path=/home/user/Disco2.dsk -name=Particion0
+fdisk -size=10 -unit=K -path=/home/user/Disco2.dsk -name=Particion1
+fdisk -size=30 -unit=K -path=/home/user/Disco2.dsk -name=Particion2
+fdisk -size=50 -unit=K -path=/home/user/Disco2.dsk -name=Particion3
+fdisk -size=20 -unit=K -path=/home/user/Disco2.dsk -name=Particion4
+
+# DISCO 3
+fdisk -size=10 -unit=K -path=/home/user/Disco3.dsk -name=Particion0
+fdisk -size=10 -unit=K -path=/home/user/Disco3.dsk -name=Particion1
+fdisk -size=30 -unit=K -path=/home/user/Disco3.dsk -name=Particion2
+fdisk -size=50 -unit=K -path=/home/user/Disco3.dsk -name=Particion3
+fdisk -size=20 -unit=K -path=/home/user/Disco3.dsk -name=Particion4
+
+
+# Borramos una de las particiones
+
+# DISCO 1 -- TESTED AND WORKING
+fdisk -delete=full -name="Particion0" -path=/home/user/Disco1.dsk
+fdisk -delete=full -name="Particion2" -path=/home/user/Disco1.dsk
+
+# DISCO 2
+fdisk -delete=full -name="Particion0" -path=/home/user/Disco2.dsk
+fdisk -delete=full -name="Particion3" -path=/home/user/Disco2.dsk
+# se vuelven a ingresar
+
+# DISCO 3
+fdisk -delete=full -name="Particion0" -path=/home/user/Disco2.dsk
+fdisk -delete=full -name="Particion3" -path=/home/user/Disco2.dsk
+
+
+rep -path=/home/user/Disco1.dsk
+
+# Fdisk Best Fit (DISCO 1) BEST FIT -- TESTED AND WORKING
+fdisk -size=15 -unit=K -path=/home/user/Disco1.dsk -name=PartNew0 -fit=bf
+fdisk -size=8 -unit=K -path=/home/user/Disco1.dsk -name=PartNew1 -fit=bf
+
+# Fdisk worst Fit (DISCO 2) WORST FIT
+fdisk -size=2 -unit=K -path=/home/user/Disco3.dsk -name=PartNew0 -fit=bf
+fdisk -size=15 -unit=K -path=/home/user/Disco3.dsk -name=PartNew0 -fit=bf
+
+
+
+# TEST EXTENDIDAS Y lOGICAS
+mkdisk -size=500 -unit=m -path=/home/user/Disco1.dsk -fit=bf
+fdisk -type=E -unit=m -name=Part11 -size=20 -path=/home/user/Disco1.dsk
+fDisk -type=P -unit=m -name=Part1 -size=10 -path=/home/user/Disco1.dsk -fit=FF
+fDisk -type=P -unit=m -name=Part2 -size=10 -path=/home/user/Disco1.dsk -fit=FF
+fDisk -type=P -unit=m -name=Part3 -size=10 -path=/home/user/Disco1.dsk -fit=FF
+fdisk -type=L -unit=m -name=Part15 -size=2 -path=/home/user/Disco1.dsk
+fdisk -type=L -unit=m -name=Part16 -size=2 -path=/home/user/Disco1.dsk
+fdisk -type=L -unit=m -name=Part17 -size=2 -path=/home/user/Disco1.dsk
+
+
+# motivos --->
+1. Se esta leyendo mal (POINTERS ESTAN MAL)
+1.1 Voy a ver como escribo el EBR inicial
+2. Se esta escribiendo mal (POINTERS ESTAN MAL)
+
+mount -path=/home/user/Disco1.dsk -name=Part1 #191a -> id1 -> cambiar el 191a por el ID que a ustedes les genera
+mount -path=/home/user/Disco1.dsk -name=Part2 #191b -> id2 -> cambiar el 191b por el ID que a ustedes les genera
+mount -path=/home/user/Disco1.dsk -name=Part1 #ERR PARTICION YA MONTADA
+
+
+# MKFS (non-strict)
+mkfs -type=full -id=540Disco1

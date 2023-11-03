@@ -1,0 +1,21 @@
+digraph G{
+    nodo [shape=none, fontname="Century Gothic" label=<   <table border='0' cellborder='1' cellspacing='0' bgcolor="cornflowerblue">    <tr> <td COLSPAN='2'> <b>SUPERBLOQUE</b> </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> s_inodes_count </td> <td bgcolor="white"> b'\x00' </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_blocks_count </td> <td bgcolor="white"> b'\x00' </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_free_block_count </td> <td bgcolor="white"> b'\x00' </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_free_inodes_count </td> <td bgcolor="white"> 91021 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_mtime </td> <td bgcolor="white"> 03/01/70 21:51 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> s_umtime </td> <td bgcolor="white"> 03/01/70 21:51 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_mnt_count </td> <td bgcolor="white"> 91019 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_magic </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_inode_s </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_block_size </td> <td bgcolor="white"> 0 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_first_ino </td> <td bgcolor="white"> 61267 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_first_blo </td> <td bgcolor="white"> 92 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_bm_inode_start </td> <td bgcolor="white"> 64 </td></tr>
+    <tr> <td bgcolor="lightsteelblue"> s_bm_block_start </td> <td bgcolor="white"> 2 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_inode_start </td> <td bgcolor="white"> 2 </td> </tr>
+    <tr> <td bgcolor="lightsteelblue"> s_block_start </td> <td bgcolor="white"> 197 </td> </tr>
+   </table>>]
+
+}

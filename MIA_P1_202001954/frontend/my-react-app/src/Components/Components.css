@@ -1,0 +1,107 @@
+.input-text {
+    width: 100%; /* Adjust the width as needed */
+    border: 1px solid #ccc; /* Add a border for better visual separation */
+  }
+  /* In your Components.css or in a separate CSS file */
+.barline {
+    display: flex;
+    justify-content: space-between; /* Place the input and button at opposite ends */
+    align-items: center; /* Center the items vertically */
+  }
+  .fondito {
+    background-color: #646cffaa;
+    padding: 4em; /* Keep the top, right, and bottom padding */
+    padding-left: 1em; /* Decrease the left padding */
+    padding-right: 5em; 
+    border-radius: 3em;
+    margin: 1em; /* You can adjust margin as needed */
+    width: 100%;
+    height: 30em;
+    max-width: 40em; /* You can still limit the maximum width if desired */
+  }
+  
+.barline input[type="text"] {
+    flex: 1; /* Make the input take up remaining available space */
+    padding: 0.5em; /* Adjust padding for better appearance */
+    margin-right: 10px; /* Add some right margin for separation */
+    border: 1px solid #ccc; /* Add a border for better visual separation */
+    border-radius: 0.5em; /* Add rounded corners for better aesthetics */
+  }
+  
+  .barline button {
+    padding: 0.5em 1em; /* Adjust padding for better appearance */
+    border: none; /* Remove the button border */
+    border-radius: 0.5em; /* Add rounded corners to the button */
+  }
+
+
+  #root {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 2rem 2rem 0; /* Decrease the left padding */
+    text-align: center;
+  }
+  
+  .fondito {
+    background-color: #646cffaa;
+    padding: 4em; /* Keep the top, right, and bottom padding */
+    padding-left: 1em; /* Decrease the left padding */
+    padding-right: 5em; 
+    border-radius: 3em;
+    margin: 1em; /* You can adjust margin as needed */
+    width: 100%;
+    height: 30em;
+    max-width: 40em; /* You can still limit the maximum width if desired */
+  }
+  
+  .logo {
+    height: 3em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .read-the-docs {
+    color: #888;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 1em;
+    width: 100%; /* Make the element full-width on smaller screens */
+    max-width: 50em; /* Limit the maximum width for larger screens */
+  }
+  
+  /* Add a media query for smaller screens */
+  @media (max-width: 768px) {
+    .barrita {
+      flex-direction: column; /* Adjust the layout for smaller screens */
+    }
+  }
+  
+  

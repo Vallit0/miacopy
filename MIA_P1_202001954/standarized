@@ -1,0 +1,8 @@
+Estandarizado de Logs en este momento:
+1. ***** -> Logs de Escritura + Blue
+2. +++++ -> Logs de Done Right + Green
+3. ===== -> Logs de Warning + Amarillo
+4. !---! -> Logs de Error + Naranja
+5. ##### -> Logs de Lectura + Cyan
+6. &&&&& -> Busqueda Interna + Magenta
+

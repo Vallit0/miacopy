@@ -1,0 +1,24 @@
+digraph {
+	"Division 1
+(16.67%)"
+	"Division 2
+(33.33%)"
+	"Division 3
+(26.67%)"
+	"Division 4
+(13.33%)"
+	"Division 5
+(10.00%)"
+	"Division 1
+(16.67%)" -> "Division 2
+(33.33%)"
+	"Division 2
+(33.33%)" -> "Division 3
+(26.67%)"
+	"Division 3
+(26.67%)" -> "Division 4
+(13.33%)"
+	"Division 4
+(13.33%)" -> "Division 5
+(10.00%)"
+}

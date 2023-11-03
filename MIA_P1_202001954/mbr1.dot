@@ -1,0 +1,26 @@
+digraph G {
+subgraph cluster{
+ label="MBR"
+tbl[shape=box,label=<
+<table border='0' cellborder='1' cellspacing='0' width='300' height='200'>
+<tr>  <td width='150'> <b>Nombre</b> </td> <td width='150'> <b>Valor</b> </td>  </tr>
+<tr>  <td><b>mbr_tamaño</b></td><td>78643200</td>  </tr>
+<tr>  <td><b>mbr_fecha_creacion</b></td> <td>2023-09-24 13:26:33</td>  </tr>
+<tr>  <td><b>mbr_disk_signature</b></td> <td>68</td>  </tr>
+<tr>  <td><b>Disk_fit</b></td> <td>b'F'</td>  </tr>
+<tr>  <td><b>part_status_1</b></td> <td>2</td>  </tr>
+<tr>  <td><b>part_type_1</b></td> <td>b'P'</td>  </tr>
+<tr>  <td><b>part_fit_1</b></td> <td>b'W'</td>  </tr>
+<tr>  <td><b>part_start_1</b></td> <td>129</td>  </tr>
+<tr>  <td><b>part_size_1</b></td> <td>5242880</td>  </tr>
+<tr>  <td><b>part_name_1</b></td> <td>b'Part1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'</td>  </tr>
+<tr>  <td><b>part_status_3</b></td> <td>2</td>  </tr>
+<tr>  <td><b>part_type_3</b></td> <td>b'P'</td>  </tr>
+<tr>  <td><b>part_fit_3</b></td> <td>b'W'</td>  </tr>
+<tr>  <td><b>part_start_3</b></td> <td>52428931</td>  </tr>
+<tr>  <td><b>part_size_3</b></td> <td>20971520</td>  </tr>
+<tr>  <td><b>part_name_3</b></td> <td>b'Part3\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'</td>  </tr>
+</table>
+>];
+}
+}

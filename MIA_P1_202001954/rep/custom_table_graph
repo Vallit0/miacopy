@@ -1,0 +1,9 @@
+digraph {
+	header [label="Header 1|Header 2|Header 3" shape=plaintext]
+	row_0 [label="Cell 1|Cell 2|Cell 3" shape=plaintext]
+	row_1 [label="Cell 4|Cell 5|Cell 6" shape=plaintext]
+	row_2 [label="Cell 7|Cell 8|Cell 9" shape=plaintext]
+	header -> row_0 [style=invis]
+	row_0 -> row_1 [style=invis]
+	row_1 -> row_2 [style=invis]
+}

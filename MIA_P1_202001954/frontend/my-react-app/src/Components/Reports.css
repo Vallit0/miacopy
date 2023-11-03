@@ -1,0 +1,19 @@
+.report-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .buttons-container {
+    flex: 1;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .image-container {
+    flex: 20;
+    padding: 10px;
+    text-align: right;
+  }
+  

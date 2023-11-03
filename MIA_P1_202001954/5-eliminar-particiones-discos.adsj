@@ -1,0 +1,20 @@
+#ELIMINACION DE PARTICIONES PRIMARIAS
+fdisk -delete=full -name=Part2 -path=/tmp/d1.dsk # passed
+
+#ELIMINACION DE PARTICIONES EXTENDIDAS
+fdisk -delete=full -name=Part1 -path=/tmp/d3.dsk
+
+#ELIMINACION DE PARTICIONES LOGICAS # Not available
+# fdisk -delete=full -name=Part3 -path=/tmp/d2.dsk
+
+#Reporte disk despues de eliminar
+rep -id=540d1 -path=/home/parte1/particiones/d1.jpg -name=disk # passed
+rep -id=540d2 -path=/home/parte1/particiones/d2.jpg -name=disk
+rep -id=540d3 -path=/home/parte1/particiones/d3.jpg -name=disk
+
+#ELIMINACION DE DISCOS
+
+#Debe de mostrar error por no existir
+rmdisk -path="/home/a eliminar disco/no_existo.dsk"
+rmdisk -path="/tmp/eliminar 1.dsk"
+rmdisk -path="/tmp/eliminar 2.dsk"

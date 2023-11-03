@@ -1,0 +1,16 @@
+Current Issues
+Particiones
+1. [ X ] Size en Particiones Extendidas  -> Motivo -> archivo abierto con wb+ y no rb+
+2. [ X ] Errores afectan posteriores -> Motivo -> archivo abierto con wb+ y no rb+
+
+mount particiones
+1. [ X ] Montar Particiones
+
+to-do
+1. [X] terminar reporte
+2. [X] editar particiones
+3. [X] delete primarias (not working)
+3.1[ ] delete particiones logicas
+3.2[ ] delete extendidas
+4. [X] add particiones
+5. [ ] reporte de mbr

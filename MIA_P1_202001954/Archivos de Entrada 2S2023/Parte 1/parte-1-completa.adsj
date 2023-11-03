@@ -1,0 +1,103 @@
+#Calificacion MIA 2023 - Parte 1
+
+#CREACION DE DISCOS
+
+#Disco con primer ajuste
+mkdisk -size=75 -unit=M -path=/tmp/d1.dsk
+
+#Tamaño de 50mb
+mkdisk -unit=m -path=/tmp/d2.dsk -fit=BF -size=50
+
+#Debe crear discos en MB
+mkdisk -size=101 -path=/tmp/d3.dsk -fit=WF            	 
+mkdisk -size=1 -path="/tmp/eliminar 1.dsk"
+mkdisk -size=1 -path="/tmp/eliminar 2.dsk"
+
+#CREACION DE PARTICIONES PRIMARIAS Y EXTENDIDAS
+
+#Crear particiones d1.dsk
+fdisk -type=P -unit=M -name=Part1 -size=25 -path=/tmp/d1.dsk
+fdisk -type=P -unit=M -name=Part2 -size=25 -path=/tmp/d1.dsk
+fdisk -type=P -unit=M -name=Part3 -size=20 -path=/tmp/d1.dsk
+
+#Crear particiones d2.dsk
+#Error, no existe extendida
+fdisk -type=L -unit=M -name=Part6 -size=25 -path=/tmp/d2.dsk
+#Ocupa los 10MB del disco
+fdisk -type=E -unit=M -name=Part1 -size=10 -path=/tmp/d2.dsk  -fit=FF
+#Error, ya existe una extendida
+fdisk -type=E -unit=M -name=Part7 -size=25 -path=/tmp/d2.dsk  -fit=WF
+fdisk -type=L -unit=k -name=Part2 -size=1024 -path=/tmp/d2.dsk
+fdisk -type=L -unit=k -name=Part3 -size=1024 -path=/tmp/d2.dsk
+fdisk -type=L -unit=k -name=Part4 -size=1024 -path=/tmp/d2.dsk
+
+#Crear particiones d3.dsk
+fdisk -type=E -unit=M -name=Part1 -size=25 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=P -unit=M -name=Part2 -size=25 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=P -unit=M -name=Part3 -size=25 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=P -unit=M -name=Part4 -size=25 -path=/tmp/d3.dsk  -fit=BF
+#error, ya existen 4 particiones
+fdisk -type=P -unit=M -name=Part1 -size=25 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=L -unit=K -name=Part5 -size=1024 -path=/tmp/d3.dsk  -fit=BF
+fdisk -type=L -unit=K -name=Part6 -size=1024 -path=/tmp/d3.dsk  -fit=BF
+
+#MOUNT
+mount -path=/tmp/d1.dsk -name=Part1
+mount -path=/tmp/d2.dsk -name=Part1
+mount -path=/tmp/d3.dsk -name=Part1
+
+########reporte disk del estado inicial de las particiones
+rep -id=XX1d1 -path=/home/parte1/particiones/d1.jpg -name=disk #id XX1d1
+rep -id=XX1d2 -path=/home/parte1/particiones/d2.jpg -name=disk #id XX1d2
+rep -id=XX1d3 -path=/home/parte1/particiones/d3.jpg -name=disk #id XX1d3
+
+#CAMBIO DE TAMAÑO  DE PARTICIONES
+
+#Error, solo tiene 25mb de size
+fdisk -add=-30 -unit=m -name=Part1 -path=/tmp/d1.dsk
+#Error, no hay espacio
+fdisk -add=45 -unit=m -name=Part3 -path=/tmp/d1.dsk 
+fdisk -add=-20 -unit=m -name=Part1 -path=/tmp/d1.dsk
+fdisk -add=45 -unit=m -name=Part3 -path=/tmp/d1.dsk 
+
+#reporte disk despues de cambiar tamaños
+rep -id=XX1d1 -path=/home/parte1/particiones/d1.jpg -name=disk
+rep -id=XX1d2 -path=/home/parte1/particiones/d2.jpg -name=disk
+rep -id=XX1d3 -path=/home/parte1/particiones/d3.jpg -name=disk
+
+#ELIMINACION DE PARTICIONES PRIMARIAS
+fdisk -delete=full -name=Part2 -path=/tmp/d1.dsk
+
+#ELIMINACION DE PARTICIONES EXTENDIDAS
+fdisk -delete=full -name=Part1 -path=/tmp/d3.dsk
+
+#ELIMINACION DE PARTICIONES LOGICAS
+fdisk -delete=full -name=Part3 -path=/tmp/d2.dsk
+
+#Reporte disk despues de eliminar
+rep -id=XX1d1 -path=/home/parte1/particiones/d1.jpg -name=disk
+rep -id=XX1d2 -path=/home/parte1/particiones/d2.jpg -name=disk
+rep -id=XX1d3 -path=/home/parte1/particiones/d3.jpg -name=disk
+
+#ELIMINACION DE DISCOS
+
+#Debe de mostrar error por no existir
+rmdisk -path="/home/a eliminar disco/no_existo.dsk"
+rmdisk -path="/tmp/eliminar 1.dsk"
+rmdisk -path="/tmp/eliminar 2.dsk"
+
+#REPORTES MBR
+rep -id=XX1d1 -path=/home/parte1/mbr1.jpg -name=mbr
+rep -id=XX1d2 -path=/home/parte1/mbr2.jpg -name=mbr
+rep -id=XX1d3 -path=/home/parte1/mbr3.jpg -name=mbr
+
+#UNMOUNT
+unmount -id=XX1d3
+
+#Debe dar error porque ya no esta montada la particion
+rep -id=XX1d3 -path=/home/parte1/mbr3.jpg -name=mbr
+
+#Cerrar el programa para validar
+#Debe dar error porque no deberia estar montado nada
+pause
+rep -id=XX1d3 -path=/home/parte1/mbr3.jpg -name=mbr

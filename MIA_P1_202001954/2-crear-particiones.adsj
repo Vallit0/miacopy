@@ -1,0 +1,36 @@
+#CREACION DE PARTICIONES PRIMARIAS Y EXTENDIDAS
+
+#Crear particiones d1.dsk
+# Passed
+fdisk -type=P -unit=M -name=Part1 -size=25 -path=/tmp/d1.dsk # PASSED
+fdisk -type=P -unit=M -name=Part2 -size=25 -path=/tmp/d1.dsk # PASSED
+fdisk -type=P -unit=M -name=Part3 -size=20 -path=/tmp/d1.dsk # PASSED
+
+pause
+
+#Error, no existe extendida
+fdisk -type=L -unit=M -name=Part6 -size=25 -path=/tmp/d2.dsk # PASSED
+
+pause
+#Ocupa los 10MB del disco (Paso condicional)
+fdisk -type=E -unit=M -name=Part1 -size=10 -path=/tmp/d2.dsk -fit=FF # PASSED
+
+#Error, ya existe una extendida
+fdisk -type=E -unit=M -name=Part7 -size=25 -path=/tmp/d2.dsk  -fit=WF # passed
+fdisk -type=L -unit=k -name=Part2 -size=1024 -path=/tmp/d2.dsk # PASSED (Potencial issue SIZE)
+fdisk -type=L -unit=k -name=Part3 -size=1024 -path=/tmp/d2.dsk # PASSED  (Potencial issue SIZE)
+fdisk -type=L -unit=k -name=Part4 -size=1024 -path=/tmp/d2.dsk # PASSED
+
+pause
+
+#Crear particiones d3.dsk
+fdisk -type=E -unit=M -name=Part1 -size=25 -path=/tmp/d3.dsk  -fit=BF # PASSED
+fdisk -type=P -unit=M -name=Part2 -size=25 -path=/tmp/d3.dsk  -fit=BF # PASSED
+fdisk -type=P -unit=M -name=Part3 -size=25 -path=/tmp/d3.dsk  -fit=BF # PASSED
+fdisk -type=P -unit=M -name=Part4 -size=25 -path=/tmp/d3.dsk  -fit=BF # PASSED
+#error, ya existen 4 particiones
+pause
+
+fdisk -type=P -unit=M -name=Part1 -size=25 -path=/tmp/d3.dsk  -fit=BF # PASSED
+fdisk -type=L -unit=K -name=Part5 -size=1024 -path=/tmp/d3.dsk  -fit=BF # PASSED
+fdisk -type=L -unit=K -name=Part6 -size=1024 -path=/tmp/d3.dsk  -fit=BF # PASSED

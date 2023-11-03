@@ -1,0 +1,94 @@
+#ENTRADA PRIMER PARTE MIA
+#Seccion N - Sergie Arizandieta
+#2S 2023
+#CAMBIAR /home/serchiboi -> POR SU USUARIO EJ ->  /home/SU_USER
+#CAMBIAR LOS IDS
+
+#DISCO X
+mkdisk -param=x -size=30 -path=/home/serchiboi/archivos/Disco.dsk
+
+#CREACION DE DISCOS---------------------------------------------------
+Mkdisk -size=50 -unit=M -path=/home/serchiboi/archivos/Disco1.dsk -fit=FF                   # 50M
+Mkdisk -unit=k -size=51200 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF                # 50M
+mkDisk -size=10 -path=/home/serchiboi/archivos/Disco3.dsk                                   # 10M
+mkdisk -size=51200 -path="/home/serchiboi/archivos/mis archivos/Disco4.dsk" -unit=K         # 50M
+mkDisk -size=20 -path="/home/serchiboi/archivos/mis archivos/Disco5.dsk" -unit=M -fit=WF    # 20M
+Mkdisk -size=50 -unit=M -path=/home/serchiboi/archivos/Disco6.dsk -fit=FF                   # 50M X
+Mkdisk -size=50 -unit=M -path=/home/serchiboi/archivos/Disco7.dsk -fit=FF                   # 50M X
+mkdisk -size=51200 -path="/home/serchiboi/archivos/mis archivos/Disco8.dsk" -unit=K         # 50M X
+mkdisk -size=51200 -path="/home/serchiboi/archivos/mis archivos/Disco9.dsk" -unit=K         # 50M X
+
+
+# Hasta aqui todo bien
+#ELIMINACION DE DISCOS---------------------------------------------------
+rmdisk -path="/home/serchiboi/archivos/Discos/mis archivos/Disco6.dsk" #ERR RUTA NO ENCONTRADA
+rmdisk -path=/home/serchiboi/archivos/Disco6.dsk
+rmdisk -path=/home/serchiboi/archivos/Disco7.dsk
+rmdisk -path="/home/serchiboi/archivos/mis archivos/Disco8.dsk"
+rmdisk -path="/home/serchiboi/archivos/mis archivos/Disco9.dsk"
+
+# Hasta aqui todo bien
+
+#CREACION DE PARTICIONES---------------------------------------------------
+#DISCO 1
+fdisk -type=P -unit=b -name=Part0 -size=10485760 -path="/home/serchiboi/archivos/mis archivos/Disco1.dsk" -fit=BF # ERR RUTA NO ENCONTRADA
+fdisk -type=P -unit=b -name=Part1 -size=10485760 -path=/home/serchiboi/archivos/Disco1.dsk -fit=BF # 10M
+fdisk -type=P -unit=k -name=Part2 -size=10240 -path=/home/serchiboi/archivos/Disco1.dsk -fit=BF    # 10M
+fdisk -type=P -unit=M -name=Part3 -size=10 -path=/home/serchiboi/archivos/Disco1.dsk -fit=BF       # 10M
+fdisk -type=P -unit=b -name=Part4 -size=10485760 -path=/home/serchiboi/archivos/Disco1.dsk -fit=BF # 10M
+fdisk -type=P -unit=b -name=Part5 -size=10485760 -path=/home/serchiboi/archivos/Disco1.dsk -fit=BF #ERR PARTICION 5
+# LIBRE DISCO 1: 50-4*10 = 10 -> 20%
+
+
+# Todo bien hasta aqui
+#DISCO 2
+fdisk -type=L -unit=k -name=Part6 -size=10240 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF #ERRROR no hay una extendida
+fdisk -type=L -unit=k -name=Part7 -size=10240 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF #ERRROR no hay una extendida
+fDisk -type=P -unit=K -name=Part8 -size=10240 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF    # 10M
+fDisk -type=P -unit=m -name=Part9 -size=10 -path=/home/serchiboi/archivos/Disco2.dsk -fit=FF       # 10M
+fDisk -type=P -unit=K -name=Part10 -size=5120 -path=/home/serchiboi/archivos/Disco2.dsk -fit=WF    # 5M
+
+fdisk -type=E -unit=m -name=Part11 -size=20 -path=/home/serchiboi/archivos/Disco2.dsk            # 20M
+fdisk -type=L -unit=k -name=Part12 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk          # 1.5M
+fdisk -type=L -unit=k -name=Part13 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF
+fdisk -type=L -unit=k -name=Part14 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=FF
+fdisk -type=L -unit=k -name=Part15 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF
+fdisk -type=L -unit=k -name=Part16 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=WF
+fdisk -type=L -unit=k -name=Part17 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF
+fdisk -type=L -unit=k -name=Part18 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=FF
+fdisk -type=L -unit=k -name=Part19 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF
+fdisk -type=L -unit=k -name=Part20 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=FF
+fdisk -type=L -unit=k -name=Part21 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF
+fdisk -type=L -unit=k -name=Part22 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=wF
+fdisk -type=L -unit=k -name=Part23 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=BF
+fdisk -type=L -unit=k -name=Part24 -size=1536 -path=/home/serchiboi/archivos/Disco2.dsk -fit=FF
+# LIBRE DISCO 2: 50-45 = 5 -> 10%
+# LIBRE EXTENDIDA 2: 20-13*1.5 = 0.5 -> 2.5% (por los EBR deberia ser menos)
+
+#DISCO 3
+fdisk -type=P -unit=m -name=Part25 -size=20 -path=/home/serchiboi/archivos/Disco3.dsk    # 20M #ERR FALTA ESPACIO
+fdisk -type=P -unit=m -name=Part26 -size=4 -path=/home/serchiboi/archivos/Disco3.dsk     #4M
+fdisk -type=P -unit=m -name=Part27 -size=4 -path=/home/serchiboi/archivos/Disco3.dsk     #4M
+fdisk -type=P -unit=m -name=Part28 -size=1 -path=/home/serchiboi/archivos/Disco3.dsk     #1M
+#LIBRE DISCO 3: 10-9= 1 -> 10%
+
+#ELIMINAR Y AGREGAR ESPACIO DISCO 3
+fdisk -add=-1000 -unit=m -path=/home/serchiboi/archivos/Disco3.dsk -name=Part26 # ERR SIZE NEGATIVO
+fdisk -add=1000 -unit=m -path=/home/serchiboi/archivos/Disco3.dsk -name=Part26 # ERR PARTICION NO TIENE ESPACIO
+fdisk -add=-2 -unit=m -path=/home/serchiboi/archivos/Disco3.dsk -name=Part26 # 4-2= 2M
+fdisk -delete=full -name=Part27 -path=/home/serchiboi/archivos/Disco3.dsk # 0
+fdisk -add=4 -unit=m -path=/home/serchiboi/archivos/Disco3.dsk -name=Part28 # 4+1= 5M
+#LIBRE DISCO 3: 10-7= 3 -> 30%
+
+#DISCO 5
+fdisk -type=E -unit=k -name=Part29 -size=5120 -path="/home/serchiboi/archivos/mis archivos/Disco5.dsk" -fit=BF # 5MB
+fdisk -type=L -unit=k -name=Part30 -size=1024 -path="/home/serchiboi/archivos/mis archivos/Disco5.dsk" -fit=BF # 1MB
+fdisk -type=P -unit=k -name=Part31 -size=5120 -path="/home/serchiboi/archivos/mis archivos/Disco5.dsk" -fit=BF # 5MB
+fdisk -type=L -unit=k -name=Part32 -size=1024 -path="/home/serchiboi/archivos/mis archivos/Disco5.dsk" -fit=BF # 1MB
+fdisk -type=L -unit=k -name=Part33 -size=1024 -path="/home/serchiboi/archivos/mis archivos/Disco5.dsk" -fit=BF # 1MB
+fdisk -type=L -unit=k -name=Part34 -size=1024 -path="/home/serchiboi/archivos/mis archivos/Disco5.dsk" -fit=BF # 1MB
+# LIBRE DISCO 5: 20-10 = 5 -> 50%
+# LIBRE EXTENDIDA 2: 5-4 = 1 -> 20% (por los EBR deberia ser menos)
+
+
+

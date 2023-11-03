@@ -1,0 +1,15 @@
+1. Todo se encuentra en Main
+2. Al correr los comandos que tienen un path, en algun punto
+".." se agrega pues, los comandos (en Pycharm) se corren en venv
+MKDISK -> Agregado linea 50 MKDISK
+
+3. Al calificarse el path debe ser "./comandos.eea"
+execute -path="./comandos.eea"
+
+execute -path="/1-crear-discos.adsj" # Parte 1.1
+execute -path="/2-crear-particiones.adsj" # Parte 1
+execute -path="/3-montar-particiones.adsj"
+execute -path="/4-editar-particiones.adsj"
+
+Graphviz Online:
+https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0Asubgraph%20cluster%7B%0A%20label%3D%22MBR%22%0Atbl%5Bshape%3Dbox%2Clabel%3D%3C%0A%3Ctable%20border%3D'0'%20cellborder%3D'1'%20cellspacing%3D'0'%20width%3D'300'%20height%3D'200'%3E%0A%3Ctr%3E%20%20%3Ctd%20width%3D'150'%3E%20%3Cb%3ENombre%3C%2Fb%3E%20%3C%2Ftd%3E%20%3Ctd%20width%3D'150'%3E%20%3Cb%3EValor%3C%2Fb%3E%20%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Embr_tama%C3%B1o%3C%2Fb%3E%3C%2Ftd%3E%3Ctd%3E52428800%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Embr_fecha_creacion%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3E2023-09-24%2010%3A00%3A23%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Embr_disk_signature%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3E36%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3EDisk_fit%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3Eb'F'%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Epart_status_1%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3E2%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Epart_type_1%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3Eb'E'%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Epart_fit_1%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3Eb'F'%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Epart_start_1%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3E129%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Epart_size_1%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3E10485760%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3Ctr%3E%20%20%3Ctd%3E%3Cb%3Epart_name_1%3C%2Fb%3E%3C%2Ftd%3E%20%3Ctd%3Eb'Part1%5Cx00%5Cx00%5Cx00%5Cx00%5Cx00%5Cx00%5Cx00%5Cx00%5Cx00%5Cx00%5Cx00'%3C%2Ftd%3E%20%20%3C%2Ftr%3E%0A%3C%2Ftable%3E%0A%3E%5D%3B%0A%7D%0A%7D%0A

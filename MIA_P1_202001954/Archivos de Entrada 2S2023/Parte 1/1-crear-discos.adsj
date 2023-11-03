@@ -1,0 +1,21 @@
+#Calificacion MIA 2023 - Parte 1
+
+#CREACION DE DISCOS
+
+#ERROR DE PARÁMETRO
+mkdisk -size=75 -unit=M -path=/tmp/d1.dsk -parametroError=80
+
+pause
+
+
+#Disco con primer ajuste
+mkdisk -size=75 -unit=M -path=/tmp/d1.dsk
+
+#Tamaño de 50mb
+mkdisk -unit=m -path=/tmp/d2.dsk -fit=BF -size=50
+
+#Debe crear discos en MB
+mkdisk -size=101 -path=/tmp/d3.dsk -fit=WF            	 
+mkdisk -size=1 -path="/tmp/eliminar 1.dsk"
+mkdisk -size=1 -path="/tmp/eliminar 2.dsk"
+mkdisk -size=1 -path="/tmp/calificacion/eliminar 2.dsk"
