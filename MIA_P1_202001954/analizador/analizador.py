@@ -20,7 +20,7 @@ import ctypes
 import sys
 import os
 # Agregar el directorio raíz de tu proyecto al sys.path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 ## Funciones que deberian estar en Functions
@@ -108,6 +108,7 @@ def informacion_estudiante():
 
 
 if __name__ == '__main__':
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     app.run(debug=True)
 
 
